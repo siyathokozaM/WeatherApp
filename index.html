@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      body {
+        display: block;
+        background-color: #faebd7;
+        margin: 10px;
+        text-align: center;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      .body {
+        max-width: 600px;
+        background-color: aquamarine;
+        margin: 30px auto;
+        padding: 10px 0;
+      }
+
+      .currently p {
+        font-size: 30px;
+        margin-top: -15px;
+      }
+      .emoji-1 {
+        color: #0000ff;
+        font-size: 25px;
+        padding-top: 10px;
+      }
+      h1 {
+        color: #0000ff;
+      }
+      ul p {
+        margin-top: -10px;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      li {
+        display: block;
+        padding: 1px 0;
+        margin: 10px auto;
+        max-width: 350px;
+        font-size: 20px;
+        transition: all 0.5s ease-in-out;
+      }
+
+      li:hover {
+        background-color: #faebd7;
+        border-radius: 5px;
+      }
+
+      button {
+        font-size: 15px;
+        font-weight: 550;
+        display: block;
+        margin: 0 auto;
+        padding: 20px 25px;
+        background: #1a64d6;
+        color: #ffffff;
+        border: 1px solid #1a64d6;
+        border-radius: 50px;
+      }
+
+      button:hover {
+        color: #1a64d6;
+        border: 1px solid #1a64d6;
+        background-color: #ffffff;
+        cursor: pointer;
+      }
+
+      .last-p {
+        margin: 20px;
+        font-weight: 500;
+        font-size: 20px;
+        opacity: 80%;
+        font-family: helvetica;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body">
+      <div class="currently">
+        <div class="emoji-1">🌤️</div>
+        <h1>Currently 21° in Tokyo</h1>
+        <p>13° / <strong>23°</strong></p>
+      </div>
+      <ul>
+        <li>
+          <h4>🌧️Tomorrow</h4>
+          <p>10° / <strong>22°</strong></p>
+        </li>
+
+        <li>
+          <h4>🌥️Saturday</h4>
+          <p>15° / <strong>17°</strong></p>
+        </li>
+
+        <li>
+          <h4>☀️Sunday</h4>
+          <p>25° / <strong>28°</strong></p>
+        </li>
+      </ul>
+      <button>Change City</button>
+      <p class="last-p">Coded by Siya M</p>
+
+      <script>
+        function city() {
+          let cityName = prompt("What is your city?");
+          cityName = cityName.trim();
+
+          let temp = prompt("What is the temperature?");
+          let h1 = document.querySelector("h1");
+          let emoji = document.querySelector(".emoji-1");
+
+          if (temp >= 0) {
+            h1.innerHTML = "Currently " + temp + "° in " + cityName;
+            emoji.innerHTML = "🙂";
+          } else {
+            h1.innerHTML = "Currently " + temp + "° in " + cityName;
+            emoji.innerHTML = "☹️";
+          }
+        }
+
+        let changeCity = document.querySelector("button");
+        changeCity.addEventListener("click", city);
+      </script>
+    </div>
+  </body>
+</html>
